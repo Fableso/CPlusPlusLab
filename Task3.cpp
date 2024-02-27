@@ -2,20 +2,24 @@
 
 using namespace std;
 
-int main()
-{
-    int n = 26;
-    double sum = 1;
-    double currentVariable = 1;
-    cout << currentVariable << endl;
 
-    for (int i = 0; i < n; i++)
-    {
-        currentVariable *= (-0.5);
-        cout << currentVariable << endl;
-        sum += currentVariable;
+int main() {
+    int cashRegister[] = {1000, 500, 200, 100, 50, 20, 10, 5, 2, 1};
+    int sum;
+    cout << "Enter amount of money you need: ";
+    cin >> sum;
+    cout << endl;
+    int countBanknotes = 0;
+    while(sum > 0) {
+        for (int banknote : cashRegister) {
+            if (sum >= banknote) {
+                cout << "Cash register gives you a " << banknote << "$ banknote." << endl;
+                countBanknotes++;
+                sum -= banknote;
+                break;
+            }
+        }
     }
-
-    cout << sum;
+    cout << endl << countBanknotes << " banknotes have been given to you.";
     return 0;
 }
