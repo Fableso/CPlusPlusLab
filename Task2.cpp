@@ -15,7 +15,6 @@ void outputArray(int arr[], int size)
 
 void fillArray(int arr[], int size)
 {
-    srand(static_cast<unsigned int>(time(0)));
     for (int i = 0; i < size; ++i) {
         arr[i] = rand() - RAND_MAX / 2;
     }
@@ -31,6 +30,7 @@ void switchNegativeToPositive(int arr[], int size)
 
 
 int main() {
+    srand(static_cast<unsigned int>(time(0)));
     int const n = 36;
     int x[n];
     fillArray(x, n);
